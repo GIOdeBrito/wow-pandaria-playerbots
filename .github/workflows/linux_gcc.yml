@@ -43,7 +43,7 @@ jobs:
       run: |
         mkdir bin
         cd bin
-        cmake ../ -DTOOLS=1 -DELUNA=0 -DCMAKE_INSTALL_PREFIX=check_install
+        cmake ../ -DTOOLS=1 -DELUNA=0 -DCMAKE_C_FLAGS="-march=x86-64 -mno-avx512f" -DCMAKE_CXX_FLAGS="-march=x86-64 -mno-avx512f" -DCMAKE_INSTALL_PREFIX=check_install
         cd ..
     - name: Build
       run: |
